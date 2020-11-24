@@ -1,1 +1,19 @@
+# Git Update
+name: gitupdate
+parent: default
 
+global_vars: 
+  - name: date_updated
+    type: date
+    params:
+      format: "%d-%m-%Y% | %H:%M"
+matches:
+  - trigger: ":updated"
+    replace: "{{date_updated}}"
+  - trigger: ":commit"
+    replace: "git commit -m "Updated: {{date_updated}}"
+    vars:
+    - name: output
+      type: match
+      params:
+        trigger: ":updated"
