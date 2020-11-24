@@ -8,6 +8,7 @@ global_vars:
     params:
       format: "%d-%m-%Y% | %H:%M"
 matches:
+# This is to name the commit as the time it was updated
   - trigger: ":updated"
     replace: "{{date_updated}}"
   - trigger: ":commit"
@@ -17,3 +18,8 @@ matches:
       type: match
       params:
         trigger: ":updated"
+# This is to save time writing the update commands
+  - trigger: ":gp"
+    replace: "git push"
+  - trigger: ":add"
+    replace: "git add -A"
