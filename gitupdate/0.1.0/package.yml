@@ -11,7 +11,7 @@ matches:
   - trigger: ":updated"
     replace: "{{date_updated}}"
   - trigger: ":commit"
-    replace: "git commit -m "Updated: {{date_updated}}"
+    replace: "git commit -m "Updated: {{output}}"
     vars:
     - name: output
       type: match
