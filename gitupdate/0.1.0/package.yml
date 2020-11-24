@@ -11,7 +11,7 @@ global_vars:
 matches:
 # This is to name the commit as the time it was updated
   - trigger: ":commit"
-    replace: "git commit -m "Updated: {{date_updated}}"
+    replace: "git commit -m \"Updated: {{date_updated}}\" "
 # This is to save time writing the update commands
   - trigger: ":gp"
     replace: "git push"
