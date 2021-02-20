@@ -17,3 +17,13 @@ matches:
     replace: "git push"
   - trigger: ":add"
     replace: "git add -A"
+# To push to a remote repo if you want to choose the branch
+  - trigger: ":rpush"
+    replace: "git push --set-upstream origin $|$"
+# To push to a remote repo if you have the branch's name in your clipboard
+  - trigger: ":rpushc"
+    replace: "git push --set-upstream origin git push --set-upstream origin {{clipboard}}"
+    force_clipboard: true
+    vars:
+      - name: clipboard
+        type: clipboard
